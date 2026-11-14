@@ -12,9 +12,10 @@ let expanded = false;
 let normalBounds = null;
 
 const INSTANCES = [
-  'https://inv.nadeko.net',
-  'https://yewtu.be',
-  'https://invidious.nerdvpn.de'
+ 'https://yt.chocolatemoo53.com',
+ 'https://invidious.tiekoetter.com',
+ 'https://inv.nadeko.net',
+ 'https://invidious.nerdvpn.de'
 ];
 
 function searchInstance(base, query) {
