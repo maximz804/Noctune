@@ -1,7 +1,8 @@
+
 {
   "name": "noctune",
   "version": "0.2.0",
-  "description": "Noctune \u2014 dark YouTube music desktop app with listening analytics",
+  "description": "NOCTUNE - Dark futuristic YouTube music player for Windows",
   "main": "main.js",
   "author": "Noctune Contributors",
   "license": "MIT",
@@ -16,28 +17,26 @@
   },
   "build": {
     "appId": "app.noctune.desktop",
-    "productName": "Noctune",
+    "productName": "NOCTUNE",
+    "asar": true,
     "directories": {
       "output": "dist"
     },
     "files": [
       "main.js",
+      "preload.js",
+      "index.html",
       "app/**/*",
       "assets/**/*",
-      "package.json",
-      "preload.js"
+      "noctune.png",
+      "noctune.ico",
+      "package.json"
     ],
     "win": {
       "target": [
         "portable"
       ],
-      "icon": "assets/noctune.ico"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true
+      "icon": "noctune.ico"
     },
     "portable": {
       "artifactName": "NOCTUNE-Portable-${version}.${ext}"
