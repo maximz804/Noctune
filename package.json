@@ -1,6 +1,6 @@
 {
   "name": "noctune",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "NOCTUNE - dark desktop music player with public search and floating mini player",
   "main": "main.js",
   "author": "Noctune Contributors",
@@ -8,7 +8,7 @@
   "scripts": { "start": "electron .", "dist:win": "electron-builder --win portable", "dist:dir": "electron-builder --win dir" },
   "devDependencies": { "electron": "^33.4.11", "electron-builder": "^25.1.8" },
   "build": { "appId": "app.noctune.desktop", "productName": "NOCTUNE", "asar": true, "directories": { "output": "dist" },
-    "files": ["main.js", "preload.js", "index.html", "noctune.png", "noctune.ico", "package.json"],
+    "files": ["main.js", "preload.js", "index.html", "mini.html", "noctune.png", "noctune.ico", "package.json"],
     "win": { "target": ["portable"], "icon": "noctune.ico" },
     "portable": { "artifactName": "NOCTUNE-Portable-${version}.${ext}" }
   }
