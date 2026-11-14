@@ -34,7 +34,7 @@ function startLocalServer() {
       if (pathname !== '/' && pathname !== '/index.html') {
         res.writeHead(404); res.end('Not found'); return;
       }
-      fs.readFile(path.join(__dirname, 'app', 'index.html'), (err, data) => {
+      fs.readFile(path.join(__dirname,'index.html'), (err, data) => {
         if (err) { res.writeHead(500); res.end('Could not load app'); return; }
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'X-Content-Type-Options': 'nosniff' });
         res.end(data);
