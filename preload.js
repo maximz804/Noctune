@@ -1,11 +1,5 @@
 const {contextBridge,ipcRenderer}=require('electron');
-const listen=(channel,cb)=>ipcRenderer.on(channel,(_e,...args)=>cb(...args));
+const on=(channel,cb)=>ipcRenderer.on(channel,(_event,...args)=>cb(...args));
 contextBridge.exposeInMainWorld('noctuneDesktop',{
-openMini:state=>ipcRenderer.send('noctune:open-mini',state),
-onRequestMini:cb=>listen('noctune:request-mini',cb),
-onResume:cb=>listen('noctune:resume',cb),
-onLikeTrack:cb=>listen('noctune:like-track',cb),
-miniReady:()=>ipcRenderer.send('noctune:mini-ready'),onMiniTrack:cb=>listen('noctune:mini-track',cb),onHandoffRequest:cb=>listen('noctune:handoff-request',cb),
-restore:()=>ipcRenderer.send('noctune:restore'),handoff:state=>ipcRenderer.send('noctune:handoff',state),
-miniClose:()=>ipcRenderer.send('noctune:mini-close'),miniStateUpdate:state=>ipcRenderer.send('noctune:mini-state-update',state),miniLike:id=>ipcRenderer.send('noctune:mini-like',id)
+ openMini:s=>ipcRenderer.send('noctune:open-mini',s),onRequestMini:cb=>on('noctune:request-mini',cb),onResume:cb=>on('noctune:resume',cb),onLikeTrack:cb=>on('noctune:like-track',cb),miniReady:()=>ipcRenderer.send('noctune:mini-ready'),onMiniTrack:cb=>on('noctune:mini-track',cb),onHandoffRequest:cb=>on('noctune:handoff-request',cb),restore:()=>ipcRenderer.send('noctune:restore'),handoff:s=>ipcRenderer.send('noctune:handoff',s),miniStateUpdate:s=>ipcRenderer.send('noctune:mini-state-update',s),miniLike:id=>ipcRenderer.send('noctune:mini-like',id)
 });
