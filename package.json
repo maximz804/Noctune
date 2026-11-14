@@ -1,0 +1,46 @@
+{
+  "name": "noctune",
+  "version": "0.2.0",
+  "description": "Noctune \u2014 dark YouTube music desktop app with listening analytics",
+  "main": "main.js",
+  "author": "Noctune Contributors",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win portable",
+    "dist:dir": "electron-builder --win dir"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "app.noctune.desktop",
+    "productName": "Noctune",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "app/**/*",
+      "assets/**/*",
+      "package.json",
+      "preload.js"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "assets/noctune.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "portable": {
+      "artifactName": "NOCTUNE-Portable-${version}.${ext}"
+    }
+  }
+}
